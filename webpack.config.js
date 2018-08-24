@@ -43,6 +43,10 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template:'src/index.html'  //insert script tags inside html         
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      //react look for this variable on windows scope(if is production it will be faster)
     })
   ]
 };
